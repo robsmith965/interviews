@@ -1,18 +1,16 @@
 package rob.concurrency;
 
 public class SynchronizedExample {
-	
-	/*
-	 * without synchronized, it's faster, and prints in unpredictable order.
-	 * with synchronized, it's slower, prints 111222.
-	 *
-	 * note that without the sleep, the first thread would complete
-	 * before the second even if the method was synchronized.
-	 */
+   
+   /*
+    * without synchronized, it's faster, and prints in unpredictable order.
+    * with synchronized, it's slower, prints 111222.
+    *
+    */
     public synchronized void printThread3Times(String name)
     {
         for (int i = 0; i < 3; i++) {
-        	System.out.println(name + " :: " + i);
+           System.out.println(name + " :: " + i);
             try {
                 Thread.sleep(500);
             } catch (Exception e) {
@@ -23,7 +21,7 @@ public class SynchronizedExample {
 
     public static void main(String[] args) throws InterruptedException
     {
-    	SynchronizedExample s = new SynchronizedExample();
+       SynchronizedExample s = new SynchronizedExample();
         new MyThread("THREAD 1",s);
         new MyThread("THREAD 2",s);
     }

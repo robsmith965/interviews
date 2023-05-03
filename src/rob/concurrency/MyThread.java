@@ -10,7 +10,7 @@ public class MyThread extends Thread {
         start();
     }
 
-	@Override
+    @Override
     public void run()
     {
         s.printThread3Times(name);
